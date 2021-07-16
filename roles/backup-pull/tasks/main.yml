@@ -1,0 +1,11 @@
+---
+- name: get content single file ./backup/hoge.txt
+  ansible.builtin.fetch:
+    src: /home/admin/backup/hoge.txt
+    dest: /home/admin/backup/dev01/
+    flat: yes
+#- name: transfer shell to fetch anyfile
+#  copy:
+#    src: logscp
+#- name: get log monthly any file ./backup/https_yyyyMMDD/
+#  shell: /tmp/setup

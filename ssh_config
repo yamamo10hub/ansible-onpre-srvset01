@@ -1,0 +1,10 @@
+Host dev01
+  User operator
+  HostName x.x.x.x
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+Host srv01
+  User operator
+  HostName x.x.x.x
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null

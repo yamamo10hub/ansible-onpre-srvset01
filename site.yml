@@ -1,0 +1,4 @@
+---
+- import_playbook: ping.yml
+- import_playbook: config-berify.yml
+#- import_playbook: backup-pull.yml

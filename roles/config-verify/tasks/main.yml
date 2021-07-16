@@ -1,0 +1,29 @@
+---
+- name: logical cpucores check
+  shell: grep processor /proc/cpuinfo | wc -l
+  register: return_from_shell
+  changed_when: False
+- name: check cpucores
+  debug: 
+    msg: "{{ return_from_shell.stdout }}"
+- name: memory status
+  shell: free -m | awk 'NR==2 {print $2}'
+  register: return_from_shell
+  changed_when: False
+- name: check memory
+  debug:
+    msg: "{{ return_from_shell.stdout }}"
+- name: disk status
+  shell: df -h | grep -e " /$"
+  register: return_from_shell
+  changed_when: False
+- name: check disk size
+  debug: 
+    msg: "{{ return_from_shell.stdout }}"
+- name: TCP listenport
+  shell: netstat -anlt |grep LIST
+  register: return_from_shell
+  changed_when: False
+- name: listenport status
+  debug: 
+    msg: "{{ return_from_shell.stdout }}"

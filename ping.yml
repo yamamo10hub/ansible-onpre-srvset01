@@ -1,0 +1,7 @@
+---
+- hosts: dev01
+  gather_facts: no
+  become: true
+  roles:
+    - ping
+#- debug: var=ansible_facts
